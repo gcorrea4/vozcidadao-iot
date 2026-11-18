@@ -1,0 +1,9 @@
+OK T=24 ADC=280 normal D8
+OK T=36 ADC=280 calor D9
+OK T=24 ADC=853 baixa_luz D9
+OK T=36 ADC=853 alerta_duplo D10
+OK T=30 ADC=599 normal D8
+OK T=30 ADC=600 baixa_luz D9
+OK T=30.1 ADC=599 calor D9
+OK T=NaN ADC=853 falha_dht D10
+OK T=24 ADC=280 normal D8

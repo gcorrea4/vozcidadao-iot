@@ -1,0 +1,15 @@
+test_replay_consulta_e_rejeicao (test_rede.TesteRede.test_replay_consulta_e_rejeicao) ... 127.0.0.1 - - [18/Nov/2026 08:59:29] "GET /api/v1/leituras/ultima HTTP/1.1" 404 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 201 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "GET /api/v1/leituras/ultima HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2026 08:59:30] "POST /api/v1/leituras HTTP/1.1" 400 -
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.377s
+
+OK

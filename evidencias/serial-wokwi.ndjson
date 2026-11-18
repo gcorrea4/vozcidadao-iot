@@ -1,0 +1,6 @@
+{"estacao":"praca-01","uptime_ms":2502,"temperatura_c":24.0,"ldr_adc":280,"calor":false,"escuro":false,"estado":"normal"}
+{"estacao":"praca-01","uptime_ms":5067,"temperatura_c":24.0,"ldr_adc":280,"calor":false,"escuro":false,"estado":"normal"}
+{"estacao":"praca-01","uptime_ms":7633,"temperatura_c":24.0,"ldr_adc":280,"calor":false,"escuro":false,"estado":"normal"}
+{"estacao":"praca-01","uptime_ms":10199,"temperatura_c":24.0,"ldr_adc":280,"calor":false,"escuro":false,"estado":"normal"}
+{"estacao":"praca-01","uptime_ms":30704,"temperatura_c":36.0,"ldr_adc":280,"calor":true,"escuro":false,"estado":"calor"}
+{"estacao":"praca-01","uptime_ms":20493,"temperatura_c":36.0,"ldr_adc":853,"calor":true,"escuro":true,"estado":"alerta_duplo"}
