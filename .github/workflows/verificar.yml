@@ -1,0 +1,42 @@
+name: Verificar VozCidadã Monitor
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+        with:
+          version: "1.5.1"
+      - name: Instalar núcleo e bibliotecas
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr@1.8.8
+          arduino-cli lib install "Adafruit Unified Sensor@1.1.15" "DHT sensor library@1.4.6"
+      - name: Compilar para o Uno
+        run: arduino-cli compile --fqbn arduino:avr:uno --output-dir build firmware/monitor
+      - name: Testar regras de alerta e saídas digitais
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y clang lld
+          /usr/bin/clang++ --target=wasm32 -O1 -nostdlib -Itestes/host -Wl,--no-entry,--allow-undefined,--export=iniciar,--export=amostrar,--export-memory testes/host/ensaio.cpp -o build/ensaio.wasm
+          node testes/host/verificar.cjs build/ensaio.wasm
+      - name: Testar ponte HTTP e persistência
+        run: python3 -m unittest discover -s testes -v
+      - name: Disponibilizar firmware do Uno
+        uses: actions/upload-artifact@v4
+        with:
+          name: vozcidadao-uno
+          path: build/monitor.ino.hex
+          if-no-files-found: error
