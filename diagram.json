@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "author": "VozCidadã • 2TDSPB",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "left": 0,
+      "top": 130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "left": -130,
+      "top": -70,
+      "attrs": {
+        "temperature": "24",
+        "humidity": "45"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "left": -190,
+      "top": 135,
+      "attrs": {
+        "lux": "400",
+        "rl10": "50",
+        "gamma": "0.7"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "pull",
+      "left": -135,
+      "top": 74,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "verde",
+      "left": 64,
+      "top": -67,
+      "attrs": {
+        "color": "green",
+        "label": "verde"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "left": 60,
+      "top": 42,
+      "attrs": {
+        "value": "330"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "amarelo",
+      "left": 147,
+      "top": -67,
+      "attrs": {
+        "color": "yellow",
+        "label": "amarelo"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "left": 143,
+      "top": 42,
+      "attrs": {
+        "value": "330"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "vermelho",
+      "left": 230,
+      "top": -67,
+      "attrs": {
+        "color": "red",
+        "label": "vermelho"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "left": 226,
+      "top": 42,
+      "attrs": {
+        "value": "330"
+      },
+      "rotate": 90
+    }
+  ],
+  "connections": [
+    [
+      "dht:VCC",
+      "uno:5V",
+      "red",
+      [
+        "v15",
+        "h-15"
+      ]
+    ],
+    [
+      "dht:GND",
+      "uno:GND.2",
+      "black",
+      [
+        "v20",
+        "h-25"
+      ]
+    ],
+    [
+      "dht:SDA",
+      "uno:2",
+      "blue",
+      [
+        "v12"
+      ]
+    ],
+    [
+      "pull:1",
+      "dht:VCC",
+      "red",
+      []
+    ],
+    [
+      "pull:2",
+      "dht:SDA",
+      "blue",
+      []
+    ],
+    [
+      "ldr:VCC",
+      "uno:5V",
+      "red",
+      [
+        "h10"
+      ]
+    ],
+    [
+      "ldr:GND",
+      "uno:GND.3",
+      "black",
+      [
+        "h18"
+      ]
+    ],
+    [
+      "ldr:AO",
+      "uno:A0",
+      "purple",
+      [
+        "h28",
+        "v100"
+      ]
+    ],
+    [
+      "uno:8",
+      "r0:1",
+      "blue",
+      [
+        "v-16"
+      ]
+    ],
+    [
+      "r0:2",
+      "verde:A",
+      "blue",
+      []
+    ],
+    [
+      "verde:C",
+      "uno:GND.1",
+      "black",
+      [
+        "v8",
+        "h-16"
+      ]
+    ],
+    [
+      "uno:9",
+      "r1:1",
+      "blue",
+      [
+        "v-16"
+      ]
+    ],
+    [
+      "r1:2",
+      "amarelo:A",
+      "blue",
+      []
+    ],
+    [
+      "amarelo:C",
+      "uno:GND.1",
+      "black",
+      [
+        "v8",
+        "h-16"
+      ]
+    ],
+    [
+      "uno:10",
+      "r2:1",
+      "blue",
+      [
+        "v-16"
+      ]
+    ],
+    [
+      "r2:2",
+      "vermelho:A",
+      "blue",
+      []
+    ],
+    [
+      "vermelho:C",
+      "uno:GND.1",
+      "black",
+      [
+        "v8",
+        "h-16"
+      ]
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}

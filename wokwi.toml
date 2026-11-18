@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'firmware/monitor.hex'
+rfc2217ServerPort = 4000
