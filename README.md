@@ -104,8 +104,6 @@ O [workflow do GitHub Actions](.github/workflows/verificar.yml) compila o sketch
 
 Cada estação representa as condições em um ponto. Sombra sobre o LDR e horário alteram a medida e exigem contexto e calibração para uso em campo. Uma entrada analógica flutuante pode parecer válida se o LDR for desconectado. Se a rede cair, o alerta local continua e a ponte informa a falha de envio. Uma instalação permanente precisaria de fila persistente e reenvio com identificadores únicos para evitar duplicatas. Os ensaios abrangeram simulação e rede local. A validação em praça e a integração com o aplicativo Flutter são etapas de implantação.
 
-## Uso de IA generativa
 
-O ChatGPT Work/Codex apoiou a interpretação da rubrica, o desenvolvimento do sketch, a montagem no Wokwi, a implementação da ponte e do receptor, a criação dos testes e a documentação. O microcontrolador classifica as leituras com regras determinísticas.
 
 [Documentação do Uno](https://docs.wokwi.com/parts/wokwi-arduino-uno) · [DHT22](https://docs.wokwi.com/parts/wokwi-dht22) · [Modelo de luminosidade](https://docs.wokwi.com/parts/wokwi-photoresistor-sensor) · [Configuração da serial virtual](https://docs.wokwi.com/vscode/project-config)
